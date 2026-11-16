@@ -1,0 +1,28 @@
+marks=[]
+highest=None
+lowest=None
+total=0
+sudents=[]
+number_of_students=int(input("enter number of sudents:"))
+size=int(input("enter the number of subjects for each student:"))
+for j in range(1,number_of_students+1):
+    name=input("\n enter your name:")
+    for i in range(1,size+1):
+        mark=int(input(f"enter your mark for subject {i}:"))
+        marks.append(mark)
+        total=total+mark
+        average=total/len(marks)
+        if highest is None or mark>highest:
+            highest=mark
+        if lowest is None or mark<lowest:
+           lowest=mark
+    print(f"student {j} info")       
+    print("Name:",name)
+    print("Total:",total)
+    print("Average:",average)
+    print("Highest:",highest)
+    print("Lowest",lowest)
+    if average>=50:
+        print("status:pass")
+    else:
+        print("status:fail")
